@@ -1,4 +1,4 @@
-# MBA Rocketseat Clean Domain
+# MBA Rocketseat Web Development - Project Clean Domain
 
 This project is a demonstration of Domain Driven Design (DDD) principles applied in a Node.js application. The goal is to showcase how to structure and organize code to reflect the business domain accurately.
 
