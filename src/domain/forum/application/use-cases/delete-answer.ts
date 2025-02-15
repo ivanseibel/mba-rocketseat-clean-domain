@@ -1,3 +1,6 @@
+import { type Either, left, right } from "@/core/either";
+import { NotAllowedError } from "@/domain/forum/application/use-cases/errors/not-allowed-error";
+import { ResourceNotFoundError } from "@/domain/forum/application/use-cases/errors/resource-not-found-error";
 import type { AnswersRepository } from "../repositories/answers-repository";
 
 interface DeleteAnswerUseCaseRequest {
@@ -5,8 +8,10 @@ interface DeleteAnswerUseCaseRequest {
 	answerId: string;
 }
 
-// biome-ignore lint/complexity/noBannedTypes: <explanation>
-type DeleteAnswerUseCaseResponse = {};
+type DeleteAnswerUseCaseResponse = Either<
+	ResourceNotFoundError | NotAllowedError,
+	{}
+>;
 
 export class DeleteAnswerUseCase {
 	constructor(private answersRepository: AnswersRepository) {}
@@ -18,15 +23,15 @@ export class DeleteAnswerUseCase {
 		const answer = await this.answersRepository.findById(answerId);
 
 		if (!answer) {
-			throw new Error("Answer not found.");
+			return left(new ResourceNotFoundError());
 		}
 
 		if (authorId !== answer.authorId.toString()) {
-			throw new Error("Not allowed.");
+			return left(new NotAllowedError());
 		}
 
 		await this.answersRepository.delete(answer);
 
-		return {};
+		return right({});
 	}
 }
