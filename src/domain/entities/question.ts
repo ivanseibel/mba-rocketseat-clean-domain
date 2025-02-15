@@ -1,7 +1,7 @@
+import { Entity } from "@/core/entities/entity";
+import type { UniqueEntityID } from "@/core/entities/unique-entity-id";
+import type { Optional } from "@/core/types/optional";
 import dayjs from "dayjs";
-import { Entity } from "../../core/entities/entity";
-import type { UniqueEntityID } from "../../core/entities/unique-entity-id";
-import type { Optional } from "../../core/types/optional";
 import { Slug } from "./value-objects/slug";
 
 interface QuestionProps {
@@ -58,6 +58,7 @@ export class Question extends Entity<QuestionProps> {
 	set title(title: string) {
 		this.props.title = title;
 		this.props.slug = Slug.createFromText(title);
+
 		this.touch();
 	}
 
