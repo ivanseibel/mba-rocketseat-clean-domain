@@ -4,7 +4,12 @@
 		"enabled": true,
 		"rules": {
 			"complexity": {
-				"noBannedTypes": "off"
+				"noBannedTypes": "off",
+				"noStaticOnlyClass": "off",
+				"noThisInStatic": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
 			}
 		}
 	}
