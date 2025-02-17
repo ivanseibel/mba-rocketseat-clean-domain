@@ -1,7 +1,7 @@
 import { type Either, left, right } from "@/core/either";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
+import { ResourceNotFoundError } from "@/core/errors/errors/resource-not-found-error";
 import type { QuestionCommentsRepository } from "@/domain/forum/application/repositories/question-comments-repository";
-import { ResourceNotFoundError } from "@/domain/forum/application/use-cases/errors/resource-not-found-error";
 import { QuestionComment } from "@/domain/forum/enterprise/entities/question-comment";
 import type { QuestionsRepository } from "../repositories/questions-repository";
 
