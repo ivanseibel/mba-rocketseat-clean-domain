@@ -5,11 +5,11 @@ import type { UniqueEntityID } from "../entities/unique-entity-id";
 import type { DomainEvent } from "../events/domain-event";
 
 class CustomAggregateCreated implements DomainEvent {
-	public ocurredAt: Date;
+	public occurredAt: Date;
 	private aggregate: CustomAggregate;
 	constructor(aggregate: CustomAggregate) {
 		this.aggregate = aggregate;
-		this.ocurredAt = new Date();
+		this.occurredAt = new Date();
 	}
 
 	public getAggregateId(): UniqueEntityID {
