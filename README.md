@@ -1,34 +1,47 @@
-# MBA Rocketseat Web Development - Project Clean Domain
+# Domain-Driven Design (DDD) Study Project
 
-This project is a demonstration of Domain Driven Design (DDD) principles applied in a Node.js application. The goal is to showcase how to structure and organize code to reflect the business domain accurately.
+This repository is part of the **MBA Full-Stack Program by Rocketseat**, focused on applying **Domain-Driven Design (DDD)** principles in software development. The project explores key DDD concepts, architectural patterns, and best practices for building scalable, maintainable applications.
 
-## Domain Driven Design (DDD)
+## 📖 Topics Covered
 
-Domain Driven Design is an approach to software development that emphasizes collaboration between technical and domain experts to create a shared understanding of the problem space. The main concepts of DDD include:
+Throughout this project, the following concepts and patterns were studied and applied:
 
-- **Entities**: Objects that have a distinct identity and lifecycle.
-- **Value Objects**: Immutable objects that are defined by their attributes.
-- **Aggregates**: Clusters of entities and value objects that are treated as a single unit.
-- **Repositories**: Interfaces for accessing aggregates from a data store.
-- **Services**: Operations that don't naturally fit within entities or value objects.
-- **Factories**: Methods for creating complex objects and aggregates.
-- **Domain Events**: Events that signify something important has happened in the domain.
+### 1️⃣ **Domain-Driven Design (DDD) Fundamentals**
+- Understanding the importance of a **Ubiquitous Language** for aligning domain experts and developers.
+- The role of **Domain Experts** in defining business logic.
+- The distinction between **Entities** and **Value Objects** in modeling the domain.
 
-## Project Structure
+### 2️⃣ **Architectural Principles**
+- Implementing **Clean Architecture** to improve code organization, maintainability, and testability.
+- Structuring the domain using **Aggregates** and **Aggregate Roots** to maintain data consistency.
+- Using **Repositories** as an abstraction layer between the domain and data persistence.
 
-The project is organized into several layers to separate concerns and improve maintainability:
+### 3️⃣ **Handling Business Logic and Events**
+- **Domain Events** as a way to decouple business logic and notify different parts of the system.
+- The role of **Subscribers** in reacting to domain events asynchronously.
 
-- **Domain**: Contains the core business logic, including entities, value objects, aggregates, and domain events.
-  - [entities](src/domain/entities/): Contains the entity classes such as [`student`](src/domain/entities/student.ts), [`instructor`](src/domain/entities/instructor.ts), and [`question`](src/domain/entities/question.ts).
-  - [use-cases](src/domain/use-cases/): Contains the use case implementations such as [`question`](src/domain/use-cases/question.ts).
-- **Application**: Contains application services, which orchestrate the use of domain objects to fulfill use cases.
-- **Infrastructure**: Contains implementations of repositories, factories, and other technical concerns.
-- **Interfaces**: Contains the user interface and API endpoints.
+### 4️⃣ **Error Handling Strategies**
+- **Functional Error Handling**, using `Either`, `Left`, and `Right` to distinguish between failures and successful operations.
+- The use of **Watched Lists** to track changes in collections and optimize data persistence.
 
-## Getting Started
+### 5️⃣ **Subdomain Separation & Communication**
+- Structuring applications by separating **Bounded Contexts** for better modularity.
+- Ensuring communication between subdomains, even in a monolithic architecture.
+- The benefits of designing subdomains for **independent deployment** and scalability.
 
-To get started with the project, follow these steps:
+## 🔧 Technologies Used
+- **TypeScript** for type safety and maintainability.
+- **Node.js** as the runtime environment.
+- **Clean Architecture** principles to structure the codebase.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/mba-rocketseat-clean-domain.git
+## 🚀 Key Takeaways
+This study project reinforced the importance of **domain modeling**, **separation of concerns**, and **scalable software design**. The knowledge acquired will be instrumental in future full-stack development projects.
+
+## 📌 Future Improvements
+- Implementing **CQRS (Command Query Responsibility Segregation)** to optimize read and write operations.
+- Exploring **Event Sourcing** for better event-driven architectures.
+- Adding more real-world use cases to strengthen the practical understanding of DDD.
+
+---
+
+This project is part of the **MBA Full-Stack Development Program at Rocketseat**.
